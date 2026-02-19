@@ -65,6 +65,9 @@ async function initDb() {
 
   pool = mysql.createPool({
     ...dbConfig,
+    ssl: {
+      rejectUnauthorized: false
+    },
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
