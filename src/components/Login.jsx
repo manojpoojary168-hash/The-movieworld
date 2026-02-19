@@ -38,7 +38,10 @@ export default function Login() {
         const username = data.username || form.username
         window.localStorage.setItem('username', username)
         setStatus({ type: 'success', message: data.message || 'Login successful' })
-        window.location.href = '/'
+        // Redirect to home page after brief delay
+        setTimeout(() => {
+          window.location.href = 'https://the-movieworld.vercel.app/'
+        }, 1000)
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Something went wrong while logging in.'
