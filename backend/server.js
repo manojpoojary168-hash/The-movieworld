@@ -19,12 +19,19 @@ app.use(
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const requiredEnvVars = ['DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME', 'DB_PORT'];
+const missing = requiredEnvVars.filter((key) => !process.env[key]);
+if (missing.length > 0) {
+  console.error('Missing required environment variables:', missing.join(', '));
+  process.exit(1);
+}
+
 const dbConfig = {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT,
+  port: Number(process.env.DB_PORT),
   ssl: {
     rejectUnauthorized: false
   }
@@ -61,7 +68,16 @@ async function initDb() {
     )
   `;
 
-  await ensureDatabaseExists();
+  try {
+    await ensureDatabaseExists();
+  } catch (error) {
+    // Managed databases (like Aiven) often disallow CREATE DATABASE for app users.
+    // If DB already exists, continue and just ensure tables exist.
+    console.warn(
+      'Skipping database creation step. Ensure DB_NAME exists in your provider.',
+      error && (error.code || error.message) ? (error.code || error.message) : error
+    );
+  }
 
   pool = mysql.createPool({
     ...dbConfig,
@@ -197,5 +213,8 @@ async function startServer() {
   });
 }
 
-startServer();
+startServer().catch((err) => {
+  console.error('Server failed to start:', err);
+  process.exit(1);
+});
 
