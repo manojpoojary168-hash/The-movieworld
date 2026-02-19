@@ -4,6 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Needed so assets load correctly on GitHub Pages
-  base: '/The-movieworld/',
+  // Default base for Vercel/other hosts; override to '/The-movieworld/' when building for GitHub Pages.
+  base: process.env.VITE_APP_BASE || '/',
 })

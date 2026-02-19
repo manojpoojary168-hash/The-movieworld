@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import './app.css'
+import './App.css'
 import { useAbortController } from './hooks/useAbortController'
 import { Sidebar } from './components/Sidebar'
 import { TopBar } from './components/TopBar'
