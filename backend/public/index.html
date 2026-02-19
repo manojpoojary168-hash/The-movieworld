@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Movie - Sign In</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-overlay"></div>
+    <div class="background-gradient"></div>
+
+    <header class="header">
+      <div class="logo">NETFLIX</div>
+    </header>
+
+    <main class="main">
+      <section class="card">
+        <h1 class="card-title">Sign In</h1>
+
+        <form id="login-form" class="form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="login-username"
+              placeholder="Email or mobile number"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <div id="login-message" class="message"></div>
+
+          <div class="divider">
+            <span>OR</span>
+          </div>
+
+          <button type="button" class="btn btn-secondary" disabled>
+            Use a sign-in code
+          </button>
+
+          <div class="form-footer">
+            <label class="checkbox">
+              <input type="checkbox" id="remember-me" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="link muted">Forgot Password?</a>
+          </div>
+        </form>
+
+        <div class="signup">
+          <span class="muted">New to Netflix?</span>
+          <button id="show-register" class="link-button">Sign up now</button>
+        </div>
+
+        <form id="register-form" class="form form-register hidden">
+          <h2 class="card-subtitle">Create your account</h2>
+          <div class="form-group">
+            <input
+              type="text"
+              id="register-username"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="register-email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="tel"
+              id="register-phone"
+              placeholder="Phone"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="register-password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+          <div id="register-message" class="message"></div>
+        </form>
+
+        <p class="disclaimer">
+          This page is a clone-style interface for learning purposes only.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+

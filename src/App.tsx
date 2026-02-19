@@ -6,6 +6,8 @@ import { TopBar } from './components/TopBar'
 import { Hero } from './components/Hero'
 import { Row } from './components/Row'
 import { PlayerModal } from './components/PlayerModal'
+import Register from './components/Register.jsx'
+import Login from './components/Login.jsx'
 import { tmdb } from './tmdb/endpoints'
 import type { TMDBTitle } from './tmdb/types'
 import { getTitleName } from './utils/title'
@@ -137,6 +139,12 @@ export default function App() {
           }}
         />
       </main>
+
+      {/* Simple auth forms as requested */}
+      <section className="auth-layout">
+        <Register />
+        <Login />
+      </section>
 
       <PlayerModal open={playerOpen} title={playerTitle} youtubeKey={playerKey} onClose={closePlayer} />
     </div>
