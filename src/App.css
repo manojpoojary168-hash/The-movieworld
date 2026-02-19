@@ -1,0 +1,26 @@
+.app{
+  min-height: 100vh;
+  background: transparent;
+}
+
+.main{
+  margin-left: 76px;
+  padding-bottom: 48px;
+}
+
+.errorBanner{
+  position: sticky;
+  top: 70px;
+  z-index: 35;
+  margin-left: 76px;
+  padding: 12px 28px;
+  background: rgba(229,9,20,.16);
+  border-top: 1px solid rgba(229,9,20,.30);
+  border-bottom: 1px solid rgba(229,9,20,.30);
+  color: rgba(255,255,255,.94);
+}
+
+@media (max-width: 720px){
+  .main{ margin-left: 0; }
+  .errorBanner{ margin-left: 0; padding: 12px 14px; top: 62px; }
+}

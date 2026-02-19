@@ -1,0 +1,46 @@
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  margin-left: 76px;
+  background: linear-gradient(180deg, rgba(0,0,0,.82), rgba(0,0,0,0));
+}
+
+.topbar__right{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar__pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.topbar__avatar{
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(229,9,20,.9), rgba(255,255,255,.20));
+}
+
+.topbar__name{
+  font-size: 13px;
+  color: rgba(255,255,255,.88);
+}
+
+@media (max-width: 720px){
+  .topbar{ margin-left: 0; padding: 0 14px; }
+  .topbar__spacer{ display:none; }
+}
+

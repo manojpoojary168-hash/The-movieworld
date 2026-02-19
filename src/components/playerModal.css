@@ -1,0 +1,76 @@
+.playerModal{
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.playerModal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.70);
+  border: 0;
+}
+
+.playerModal__panel{
+  position: relative;
+  width: min(980px, 95vw);
+  background: rgba(12,12,12,.92);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.65);
+}
+
+.playerModal__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.playerModal__title{
+  color: rgba(255,255,255,.92);
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playerModal__close{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.88);
+  cursor: pointer;
+}
+.playerModal__close:hover{
+  background: rgba(255,255,255,.12);
+}
+
+.playerModal__body{
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.playerModal__frame{
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.playerModal__empty{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.78);
+}
+
